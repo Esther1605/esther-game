@@ -1,11 +1,21 @@
+import "./App.css";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <NavBar />
+    <div className="grid-container">
+      <div className="grid-layout">
+        <section className="nav">
+          <NavBar />
+        </section>
+
+        <section className="main">
+          <GameGrid />
+        </section>
+      </div>
     </div>
   );
-};
+}
 
 export default App;
