@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevents sideways scrolling */
 }
 
 .grid-layout {
@@ -9,10 +10,19 @@ body {
   background-color: #222;
   color: white;
   padding: 15px;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0; /* To avoid overlap with navbar */
+  left: 0;
+  z-index: 100;
 }
+
+.game-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
 .aside {
   background-color: #333;
   padding: 10px;
@@ -23,4 +33,18 @@ body {
   display: block;
   width: 40px;
   height: 40px;
+}
+
+.game-image-container {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.game-title {
+  font-size: 30px;
+  margin: 10px 0 5px 0;
 }
