@@ -6,18 +6,17 @@ import GenreList from "./components/GenreList";
 function App() {
   return (
     <div className="grid-container">
-      <div className="grid-layout">
-        <section className="nav">
-          <NavBar />
-        </section>
-        <section className="aside">
-          <GenreList />
-        </section>
+      <header className="nav">
+        <NavBar />
+      </header>
 
-        <section className="main">
-          <GameGrid />
-        </section>
-      </div>
+      <aside className="aside">
+        <GenreList />
+      </aside>
+
+      <main className="main">
+        <GameGrid />
+      </main>
     </div>
   );
 }
