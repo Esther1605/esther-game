@@ -95,9 +95,41 @@ body {
 .platform-icons{
   display: "flex";
   color: rgb(128, 126, 126);
- justify-content: space-between;
+ 
   
 }
+
+.critic-score{
+  background-color: rgb(183, 179, 179);
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.logo-score{
+  justify-content: space-between;
+}
+.critic-score {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.critic-score.green {
+  background-color: green;
+}
+
+.critic-score.yellow {
+  background-color: yellow;
+}
+
+.critic-score.red {
+  background-color: crimson;
+}
+
 .game-genre {
   font-size: 14px;
   color: #bbb;
