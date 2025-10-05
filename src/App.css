@@ -136,12 +136,40 @@ body {
   margin-top: 5px;
 }
 .skeleton-image {
-  width: 100%;
+  width: 300px;
   height: 200px;
+ background-color: #bbb;
 }
 
 
+.genre-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
 
+.genre-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
+.genre-item:hover {
+  transform: translateX(4px);
+  background-color: #222;
+}
 
+.genre-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
+.genre-name {
+  color: white;
+  font-size: 14px;
+}

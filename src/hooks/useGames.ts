@@ -40,7 +40,7 @@ const useGames = () => {
       });
   }, []);
 
-  return { games, error, isLoading };
+  return { data: games, error, isLoading };
 };
 
 export default useGames;
