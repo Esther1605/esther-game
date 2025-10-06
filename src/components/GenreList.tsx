@@ -4,9 +4,10 @@ import Spinner from "./Spinner";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if (isLoading) return <Spinner />;
@@ -22,6 +23,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
             className="genre-image"
           />
           <button
+            font-weight={genre.id === selectedGenre?.id ? "bold" : "normal"}
             onClick={() => onSelectGenre(genre)}
             className="genre-name"
             type="button">
