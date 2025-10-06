@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
-interface Genre {
+// ✅ Exporting Genre interface so it can be reused elsewhere
+export interface Genre {
   id: number;
   name: string;
   image_background: string;

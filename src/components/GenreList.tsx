@@ -1,11 +1,16 @@
-import useGenres from "../hooks/useGenres";
+import useGenres, { type Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "./image-url";
 import Spinner from "./Spinner";
 
-const GenreList = () => {
-  const { data, isLoading } = useGenres();
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre }: Props) => {
+  const { data, isLoading, error } = useGenres();
 
   if (isLoading) return <Spinner />;
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="genre-list">
@@ -16,7 +21,12 @@ const GenreList = () => {
             alt={genre.name}
             className="genre-image"
           />
-          <p className="genre-name">{genre.name}</p>
+          <button
+            onClick={() => onSelectGenre(genre)}
+            className="genre-name"
+            type="button">
+            {genre.name}
+          </button>
         </div>
       ))}
     </div>
