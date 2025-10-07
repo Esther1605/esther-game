@@ -28,6 +28,7 @@ function App() {
 
       <main className="main">
         <PlatformSelector
+          selectedPlatform={selectedPlatform}
           onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
         />
         <GameGrid

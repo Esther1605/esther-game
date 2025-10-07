@@ -1,22 +1,27 @@
-import type { Platform } from "../hooks/useGames";
+import type { Platform } from "../hooks/usePlatforms";
 import usePlatforms from "../hooks/usePlatforms";
 
 interface Props {
-  onSelectedPlatform: (Platform: Platform) => void;
+  onSelectedPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
 }
-const PlatformSelector = ({ onSelectedPlatform }: Props) => {
-  const { data, error } = usePlatforms();
+
+const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
+  const { data = [], error } = usePlatforms();
 
   if (error) return null;
 
   return (
-    <select className="platform-list">
-      <option value="">Select Platform</option>
+    <select
+      className="platform-list"
+      value={selectedPlatform?.id || ""}
+      onChange={(e) => {
+        const platform = data.find((p) => p.id === Number(e.target.value));
+        if (platform) onSelectedPlatform(platform);
+      }}>
+      <option value="">Platforms</option>
       {data.map((platform) => (
-        <option
-          onClick={() => onSelectedPlatform(platform)}
-          key={platform.id}
-          value={platform.id}>
+        <option key={platform.id} value={platform.id}>
           {platform.name}
         </option>
       ))}
