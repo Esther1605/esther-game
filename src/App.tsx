@@ -15,12 +15,10 @@ function App() {
 
   return (
     <div className="grid-container">
-      {/* Navigation bar */}
       <header className="nav">
         <NavBar />
       </header>
 
-      {/* Sidebar - Genre List */}
       <aside className="aside">
         <GenreList
           onSelectGenre={(genre) => setSelectedGenre(genre)}
@@ -28,7 +26,6 @@ function App() {
         />
       </aside>
 
-      {/* Main content area */}
       <main className="main">
         <PlatformSelector
           onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
