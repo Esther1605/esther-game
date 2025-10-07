@@ -14,7 +14,7 @@ const PlatformSelector = ({ onSelectedPlatform }: Props) => {
       <option value="">Select Platform</option>
       {data.map((platform) => (
         <option
-          onClick={() => onSelectedPlatform}
+          onClick={() => onSelectedPlatform(platform)}
           key={platform.id}
           value={platform.id}>
           {platform.name}
