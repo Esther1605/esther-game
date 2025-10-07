@@ -5,9 +5,9 @@ interface Props {
   onSelectedPlatform: (Platform: Platform) => void;
 }
 const PlatformSelector = ({ onSelectedPlatform }: Props) => {
-  const { data = [] } = usePlatforms();
+  const { data, error } = usePlatforms();
 
-  if (Error()) return null;
+  if (error) return null;
 
   return (
     <select className="platform-list">
