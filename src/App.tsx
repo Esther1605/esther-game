@@ -5,26 +5,38 @@ import GenreList from "./components/GenreList";
 import { useState } from "react";
 import type { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
+import type { Platform } from "./hooks/usePlatforms";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
 
   return (
     <div className="grid-container">
+      {/* Navigation bar */}
       <header className="nav">
         <NavBar />
       </header>
 
+      {/* Sidebar - Genre List */}
       <aside className="aside">
         <GenreList
-          selectedGenre={selectedGenre}
           onSelectGenre={(genre) => setSelectedGenre(genre)}
+          selectedGenre={null}
         />
       </aside>
 
+      {/* Main content area */}
       <main className="main">
-        <PlatformSelector />
-        <GameGrid selectedGenre={selectedGenre} />
+        <PlatformSelector
+          onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
+        />
+        <GameGrid
+          selectedGenre={selectedGenre}
+          selectedPlatform={selectedPlatform}
+        />
       </main>
     </div>
   );

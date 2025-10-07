@@ -21,7 +21,8 @@ interface FetchGamesResponse {
   results: Game[];
 }
 
-const useGames = (selectedGenre: Genre | null) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const useGames = (selectedGenre: Genre | null, selectedPlatform: unknown) => {
   const [data, setData] = useState<Game[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
