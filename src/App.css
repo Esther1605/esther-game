@@ -209,3 +209,11 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.spacing-btw-plt{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 18px;
+  margin-bottom: 5px;
+
+}
