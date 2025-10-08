@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
-import type { Genre } from "./useGenres";
 import type { Platform } from "./usePlatforms";
+import type { GameQuery } from "../App";
 
 export interface Game {
   id: number;
@@ -16,10 +16,7 @@ interface FetchGamesResponse {
   results: Game[];
 }
 
-const useGames = (
-  selectedGenre: Genre | null,
-  selectedPlatform: Platform | null
-) => {
+const useGames = (gameQuery: GameQuery) => {
   const [data, setData] = useState<Game[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -30,8 +27,8 @@ const useGames = (
     apiClient
       .get<FetchGamesResponse>("/games", {
         params: {
-          genres: selectedGenre?.id,
-          parent_platforms: selectedPlatform?.id,
+          genres: gameQuery.genre?.id,
+          platforms: gameQuery.platform?.id,
         },
       })
       .then((res) => {
@@ -42,7 +39,7 @@ const useGames = (
         setError(err.message);
         setIsLoading(false);
       });
-  }, [selectedGenre, selectedPlatform]);
+  }, [gameQuery]);
 
   return { data, error, isLoading };
 };
