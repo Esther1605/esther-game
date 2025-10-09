@@ -1,6 +1,5 @@
 import type { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
-
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
