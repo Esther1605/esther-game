@@ -292,3 +292,7 @@ body {
 form{
   width: 100%;
 }
+.heading{
+  margin-top: 5px;
+  color: #fff;
+}
