@@ -14,24 +14,27 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
-    <div className="genre-list">
-      {data.map((genre) => (
-        <div key={genre.id} className="genre-item">
-          <img
-            src={getCroppedImageUrl(genre.image_background)}
-            alt={genre.name}
-            className="genre-image"
-          />
-          <button
-            font-weight={genre.id === selectedGenre?.id ? "bold" : "normal"}
-            onClick={() => onSelectGenre(genre)}
-            className="genre-name"
-            type="button">
-            {genre.name}
-          </button>
-        </div>
-      ))}
-    </div>
+    <>
+      <h2>Genres</h2>
+      <div className="genre-list">
+        {data.map((genre) => (
+          <div key={genre.id} className="genre-item">
+            <img
+              src={getCroppedImageUrl(genre.image_background)}
+              alt={genre.name}
+              className="genre-image"
+            />
+            <button
+              font-weight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+              onClick={() => onSelectGenre(genre)}
+              className="genre-name"
+              type="button">
+              {genre.name}
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
