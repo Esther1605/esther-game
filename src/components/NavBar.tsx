@@ -1,7 +1,11 @@
 import logo from "../assets/logo.png";
 import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -10,7 +14,7 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-right">
-        <SearchInput />
+        <SearchInput onSearch={onSearch} />
       </div>
     </nav>
   );

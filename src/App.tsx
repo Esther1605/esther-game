@@ -12,6 +12,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
@@ -19,12 +20,15 @@ function App() {
     genre: null,
     platform: null,
     sortOrder: "",
+    searchText: "",
   });
 
   return (
     <div className="grid-container">
       <header className="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        />
       </header>
 
       <aside className="aside">
