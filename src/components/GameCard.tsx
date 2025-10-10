@@ -19,14 +19,13 @@ const GameCard = ({ game }: Props) => {
       </div>
 
       <div className="game-card-body">
-        <h3 className="game-title">{game.name}</h3>
-
         <div className="logo-score">
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore score={game.metacritic} />
         </div>
+        <h3 className="game-title">{game.name}</h3>
       </div>
     </div>
   );
