@@ -11,15 +11,11 @@ const GameCard = ({ game }: Props) => {
   return (
     <div className="game-card">
       <div className="game-image-container">
-        {game.background_image ? (
-          <img
-            src={getCroppedImageUrl(game.background_image)}
-            alt={game.name}
-            className="game-image"
-          />
-        ) : (
-          <div className="no-image">No Image Available</div>
-        )}
+        <img
+          src={getCroppedImageUrl(game.background_image)}
+          alt={game.name}
+          className="game-image"
+        />
       </div>
 
       <div className="game-card-body">
