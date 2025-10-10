@@ -1,11 +1,18 @@
 import logo from "../assets/logo.png";
+import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   return (
-    <div className="nav-bar">
-      <img src={logo} alt="Game Hub Logo" className="logo" />
-      <span className="nav-title">Game Hub</span>
-    </div>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <img src={logo} alt="Game Hub Logo" className="navbar-logo" />
+        <h1 className="navbar-title">Game Hub</h1>
+      </div>
+
+      <div className="navbar-right">
+        <SearchInput />
+      </div>
+    </nav>
   );
 };
 
