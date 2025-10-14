@@ -10,7 +10,7 @@ const NavBar = ({ onSearch }: Props) => {
     <nav className="navbar">
       <div className="navbar-left">
         <img src={logo} alt="Game Hub Logo" className="navbar-logo" />
-        <h1 className="navbar-title">Game Hub</h1>
+        <h1 className="navbar-title"></h1>
       </div>
 
       <div className="navbar-right">
